@@ -12,11 +12,14 @@ const BookCreate = ({onCreate}) => {
     setTitle("") 
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className='book-create'>
+      <form onSubmit={ handleSubmit }>
+        <div className="create">
+
         <label>Title</label>
         <input value={title} onChange={handleChange} />
         <button>Create!!</button>
+        </div>
 
       </form>
     </div>

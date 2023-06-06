@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react"
 import BookCreate from "./component/BookCreate";
 import BookList from "./component/BookList"
+import "./component/index.css"
 const App = () => {
   const [ books, setBooks ] = useState( [] );
   const createBook = ( title ) => {
@@ -28,7 +29,8 @@ const App = () => {
     console.log(newTitle)
   };
   return (
-    <div>
+    <div className='app'>
+      <h1>Reading List</h1>
       <BookList onEdit={editBooksById} books={books} onDelete={deleteBooksById} />
       <BookCreate onCreate={createBook}/>
     </div>
