@@ -5,18 +5,21 @@ import BookList from "./component/BookList"
 import "./component/index.css"
 const App = () => {
   const [ books, setBooks ] = useState( [] );
+  
   const createBook = ( title ) => {
     const updateBooks = [
       ...books, { id: Math.floor(Math.random()*999), title:title}
     ]
     setBooks(updateBooks)
   }
+
   const deleteBooksById = ( id ) => {
     const updatedBooks = books.filter( ( book ) => {
       return book.id !== id;
     } );
     setBooks( updatedBooks );
   }
+
   const editBooksById = (  id,newTitle ) => {
     const updatedBooks = books.map( ( book ) => {
       if ( book.id === id ) {
@@ -28,6 +31,8 @@ const App = () => {
     setBooks( updatedBooks );
     console.log(newTitle)
   };
+
+  
   return (
     <div className='app'>
       <h1>Reading List</h1>
