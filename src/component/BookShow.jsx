@@ -28,9 +28,11 @@ const BookShow = ( { book, onDelete, onEdit } ) => {
   return (
     <div className='show'>
    
-
+      <div className='show-img'>
+        
       <img src={`https://picsum.photos/seed/${book.id}/200/100`} alt="" />
       <div>{ content }</div>
+</div>
       <div className="edit">
       
       <button onClick={handleDeleteClick} ><FaTrash/></button>
